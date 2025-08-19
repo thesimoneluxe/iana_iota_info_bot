@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Iana Iota Info Bot</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iana – Info Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+      color: #f5f5f5;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+    .container {
+      max-width: 720px;
+      width: 100%;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    h1 {
+      color: #ffcc00;
+      font-size: 2.2rem;
+      margin: 0 0 8px;
+    }
+    p { font-size: 1.1rem; margin: 0 0 20px; }
+
+    /* ——— Float the orb bottom-right ——— */
+    .assistant-widget {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999; /* keep it above page content */
+    }
+
+    /* Optional: shrink a bit on very small screens */
+    @media (max-width: 420px) {
+      .assistant-widget { right: 12px; bottom: 12px; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Iana’s Info Hub</h1>
-  <p>This is a test site for hosting AI agents.</p>
+  <div class="container">
+    <h1>Welcome to Iana’s Info Hub</h1>
+    <p>Use the orb in the corner to chat with the AI agent.</p>
+  </div>
+
+  <!-- Floating Iana orb -->
+  <div class="assistant-widget">
+    <elevenlabs-convai agent-id="agent_1501k2t3r1rfe2avgt4nnpnedkwt"></elevenlabs-convai>
+  </div>
+
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 </body>
 </html>
+
